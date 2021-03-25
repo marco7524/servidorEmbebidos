@@ -95,6 +95,6 @@ function cambio()
 	  if(message.payloadString==='Encendido'){
 	  	document.getElementById("btn").innerHTML="Apagar";
 	  } else if(message.payloadString==='Apagado'){
-		document.getElementById("btn").innerHTML="Apagar";
+		document.getElementById("btn").innerHTML="Encender";
 	  }
   }
