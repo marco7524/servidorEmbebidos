@@ -1,29 +1,43 @@
 //https://www.eclipse.org/paho/clients/js/
 //funciones para botones
-function LED1_On() {
+//function LED1_On() {
 	//alert("led on");
 	//console.log("led on");
-	message = new Paho.MQTT.Message("ON");
-        message.destinationName = "marco08580212@gmail.com/test1";
-        client.send(message);
+//	message = new Paho.MQTT.Message("ON");va
+  //      message.destinationName = "marco08580212@gmail.com/test1";
+    //    client.send(message);
 	
 	//document.getElementById("sensor").innerHTML="led on";
   
 }
-function LED1_Off(){	
+//function LED1_Off(){	
 	//alert("led off");
 	//console.log("led off");
-	message = new Paho.MQTT.Message("OFF");
-        message.destinationName = "marco08580212@gmail.com/test1";
-        client.send(message);
+//	message = new Paho.MQTT.Message("OFF");
+ //       message.destinationName = "marco08580212@gmail.com/test1";
+  //      client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
 
+// funcion  para encender y apagar led con un solo botón
 
-
-
-
-
+var btn=document.getElementById('btn'), contador=0;
+function cambio()
+{if (contador==0)
+	{
+	message = new Paho.MQTT.Message("Encender");
+	message.destinationName = "marco08580212@gmail.com/test1";
+	client.send(message);
+	contador=1;
+	}
+ else
+	{
+	message = new Paho.MQTT.Message("Apagar");
+	message.destinationName = "marco08580212@gmail.com/test1";
+	client.send(message);
+	contador=0;
+	}
+}
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
   
@@ -70,6 +84,17 @@ function LED1_Off(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+	  //comando para poner el sensor desde esp32
 	  document.getElementById("sensor").innerHTML=message.payloadString;
+	  if message.payloadString==='Encendido'){
+		 document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-on-md.png";
+	  } else if message.payloadString==='Apagado'){
+		 document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-off-md.png";
+ 		
+	  }
+	  if message.payloadString==='Encendido'){
+	  	document.getElementById("btn").innerHTML="Apagar";
+	  } else if message.payloadString==='Apagado'){
+		document.getElementById("btn").innerHTML="Apagar";
+	  }
   }
-  
