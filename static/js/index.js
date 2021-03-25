@@ -23,16 +23,16 @@
 
 var btn=document.getElementById('btn'), contador=0;
 function cambio()
-{if (contador==0)
+{ if (contador==0)
 	{
-	message = new Paho.MQTT.Message("Encender");
+	message = new Paho.MQTT.Message("ENCENDER");
 	message.destinationName = "marco08580212@gmail.com/test1";
 	client.send(message);
 	contador=1;
 	}
  else
 	{
-	message = new Paho.MQTT.Message("Apagar");
+	message = new Paho.MQTT.Message("APAGAR");
 	message.destinationName = "marco08580212@gmail.com/test1";
 	client.send(message);
 	contador=0;
