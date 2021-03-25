@@ -1,5 +1,5 @@
 //https://www.eclipse.org/paho/clients/js/
-
+//funciones para botones
 function LED1_On() {
 	//alert("led on");
 	//console.log("led on");
