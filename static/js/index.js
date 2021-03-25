@@ -88,13 +88,13 @@ function cambio()
 	  document.getElementById("sensor").innerHTML=message.payloadString;
 	  if(message.payloadString==='Encendido'){
 		 document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-on-md.png";
-	  } else if message.payloadString==='Apagado'){
+	  } else if(message.payloadString==='Apagado'){
 		 document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-off-md.png";
  		
 	  }
 	  if(message.payloadString==='Encendido'){
 	  	document.getElementById("btn").innerHTML="Apagar";
-	  } else if message.payloadString==='Apagado'){
+	  } else if(message.payloadString==='Apagado'){
 		document.getElementById("btn").innerHTML="Apagar";
 	  }
   }
