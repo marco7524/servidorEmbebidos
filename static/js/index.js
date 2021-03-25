@@ -9,7 +9,7 @@
 	
 	//document.getElementById("sensor").innerHTML="led on";
   
-}
+//}
 //function LED1_Off(){	
 	//alert("led off");
 	//console.log("led off");
@@ -17,7 +17,7 @@
  //       message.destinationName = "marco08580212@gmail.com/test1";
   //      client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
-}
+//}
 
 // funcion  para encender y apagar led con un solo botón
 
