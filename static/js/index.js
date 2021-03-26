@@ -89,7 +89,7 @@ function cambio()
 	  if(message.payloadString==='Encendido'){
 		 document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-on-md.png";
 	  } else if(message.payloadString==='Apagado'){
-		 document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-off-md.png";
+		 document.getElementById("imagen").src="http://www.clker.com/cliparts/D/M/r/s/n/P/led-red-off-md.png";
  		
 	  }
 	  if(message.payloadString==='Encendido'){
