@@ -43,7 +43,7 @@ function cambio()
 var btn=document.getElementById('btn');
   function intercambio()
   { 
-      message = new Paho.MQTT.Message("historial");
+      message = new Paho.MQTT.Message("Historial");
       message.destinationName = "marco08580212@gmail.com/test2";
       client.send(message);
     
