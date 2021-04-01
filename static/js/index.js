@@ -5,7 +5,7 @@ function LED1_On() {
 	console.log("led on");
 	//document.getElementById("sensor").innerHTML="led on";
   	message = new Paho.MQTT.Message("ENCENDER");
-	message.destinationName = "juantixi99@gmail.com/tema1";
+	message.destinationName = "marco08580212@gmail.com.com/tema1";
 	client.send(message);
 }
 function LED1_Off(){	
@@ -13,7 +13,7 @@ function LED1_Off(){
 	console.log("led off");
 	//document.getElementById("sensor").innerHTML="led off";
 	message = new Paho.MQTT.Message("APAGAR");
-	message.destinationName = "juantixi99@gmail.com/tema1";
+	message.destinationName = "marco08580212@gmail.com/tema1";
 	client.send(message);
 }
 */
@@ -26,14 +26,14 @@ function cambio()
 { if (contador==0)
 	{
 	message = new Paho.MQTT.Message("ENCENDER");
-	message.destinationName = "juantixi99@gmail.com/test1";
+	message.destinationName = "marco08580212@gmail.com/test1";
 	client.send(message);
 	contador=1;
 	}
  else
 	{
 	message = new Paho.MQTT.Message("APAGAR");
-	message.destinationName = "juantixi99@gmail.com/test1";
+	message.destinationName = "marco08580212@gmail.com/test1";
 	client.send(message);
 	contador=0;
 	}
