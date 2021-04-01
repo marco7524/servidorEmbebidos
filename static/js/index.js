@@ -100,7 +100,7 @@ var btn=document.getElementById('btn');
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	document.getElementById("sensor").innerHTML=message.payloadString; 
-	if(message.payloadString==='informacion'){
+	if(message.payloadString==='datos'){
 		document.getElementById("sensor").innerHTML=message.payloadString;	 
 	} 
 	}
