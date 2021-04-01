@@ -1,43 +1,58 @@
 //https://www.eclipse.org/paho/clients/js/
-//funciones para botones
-//function LED1_On() {
+/*
+function LED1_On() {
 	//alert("led on");
-	//console.log("led on");
-//	message = new Paho.MQTT.Message("ON");va
-  //      message.destinationName = "marco08580212@gmail.com/test1";
-    //    client.send(message);
-	
+	console.log("led on");
 	//document.getElementById("sensor").innerHTML="led on";
-  
-//}
-//function LED1_Off(){	
+  	message = new Paho.MQTT.Message("ENCENDER");
+	message.destinationName = "juantixi99@gmail.com/tema1";
+	client.send(message);
+}
+function LED1_Off(){	
 	//alert("led off");
-	//console.log("led off");
-//	message = new Paho.MQTT.Message("OFF");
- //       message.destinationName = "marco08580212@gmail.com/test1";
-  //      client.send(message);
+	console.log("led off");
 	//document.getElementById("sensor").innerHTML="led off";
-//}
+	message = new Paho.MQTT.Message("APAGAR");
+	message.destinationName = "juantixi99@gmail.com/tema1";
+	client.send(message);
+}
+*/
+// nueva funcion intercambio()
 
-// funcion  para encender y apagar led con un solo botón
 
+/*
 var btn=document.getElementById('btn'), contador=0;
 function cambio()
 { if (contador==0)
 	{
 	message = new Paho.MQTT.Message("ENCENDER");
-	message.destinationName = "marco08580212@gmail.com/test1";
+	message.destinationName = "juantixi99@gmail.com/test1";
 	client.send(message);
 	contador=1;
 	}
  else
 	{
 	message = new Paho.MQTT.Message("APAGAR");
-	message.destinationName = "marco08580212@gmail.com/test1";
+	message.destinationName = "juantixi99@gmail.com/test1";
 	client.send(message);
 	contador=0;
 	}
 }
+// fin de nueva funcion intercambio()
+*/
+var btn=document.getElementById('btn');
+  function intercambio()
+  { 
+      message = new Paho.MQTT.Message("historial");
+      message.destinationName = "juantixi99@gmail.com/test2";
+      client.send(message);
+    
+      }
+	
+
+
+
+
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
   
@@ -48,8 +63,8 @@ function cambio()
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "marco08580212@gmail.com",
-    password: "ca75249186",
+    userName: "juantixi99@gmail.com",
+    password: "1234",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -62,9 +77,9 @@ function cambio()
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("marco08580212@gmail.com/test");
+    client.subscribe("juantixi99@gmail.com/test");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "marco08580212@gmail.com/test1";
+    message.destinationName = "juantixi99@gmail.com/test1";
     client.send(message);
 	
   }
@@ -81,9 +96,16 @@ function cambio()
     }
   }
 
-  // called when a message arrives
+ // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+	document.getElementById("sensor").innerHTML=message.payloadString; 
+	if(message.payloadString==='informacion'){
+		document.getElementById("sensor").innerHTML=message.payloadString;	 
+	} 
+	}
+	  
+	  /*
 	  //comando para poner el sensor desde esp32
 	  document.getElementById("sensor").innerHTML=message.payloadString;
 	  if(message.payloadString==='Encendido'){
@@ -97,4 +119,4 @@ function cambio()
 	  } else if(message.payloadString==='Apagado'){
 		document.getElementById("btn").innerHTML="Encender";
 	  }
-  }
+	  */
