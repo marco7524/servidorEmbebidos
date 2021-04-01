@@ -79,7 +79,7 @@ var btn=document.getElementById('btn');
 	
     client.subscribe("marco08580212@gmail.com/test");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "marco08580212@gmail/test1";
+    message.destinationName = "marco08580212@gmail.com/test1";
     client.send(message);
 	
   }
