@@ -44,7 +44,7 @@ var btn=document.getElementById('btn');
   function intercambio()
   { 
       message = new Paho.MQTT.Message("historial");
-      message.destinationName = "juantixi99@gmail.com/test2";
+      message.destinationName = "marco08580212@gmail.com/test2";
       client.send(message);
     
       }
@@ -63,8 +63,8 @@ var btn=document.getElementById('btn');
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "juantixi99@gmail.com",
-    password: "1234",
+    userName: "marco08580212@gmail.com",
+    password: "ca75249186",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -79,7 +79,7 @@ var btn=document.getElementById('btn');
 	
     client.subscribe("juantixi99@gmail.com/test");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "juantixi99@gmail.com/test1";
+    message.destinationName = "marco08580212@gmail/test1";
     client.send(message);
 	
   }
