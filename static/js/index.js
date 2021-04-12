@@ -19,8 +19,8 @@ function LED1_Off(){
 */
 // nueva funcion intercambio()
 
+//Comando para encender boton 
 
-/*
 var btn=document.getElementById('btn'), contador=0;
 function cambio()
 { if (contador==0)
@@ -39,7 +39,11 @@ function cambio()
 	}
 }
 // fin de nueva funcion intercambio()
-*/
+
+
+
+// comando de la ultima practica de sensor 
+/*
 var btn=document.getElementById('btn');
   function intercambio()
   { 
@@ -49,7 +53,7 @@ var btn=document.getElementById('btn');
     
       }
 	
-
+*/
 
 
 
@@ -95,8 +99,8 @@ var btn=document.getElementById('btn');
       console.log("onConnectionLost:"+responseObject.errorMessage);
     }
   }
-
- // called when a message arrives
+/*
+ // called when a message arrives(dcaomadno  para  la ultima practica)
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	document.getElementById("sensor").innerHTML=message.payloadString; 
@@ -104,9 +108,14 @@ var btn=document.getElementById('btn');
 		document.getElementById("sensor").innerHTML=message.payloadString;	  
 	} 
 	}
-	  
-	  /*
+*/
+
+  // called when a message arrives
+  function onMessageArrived(message) {
+    console.log("onMessageArrived:"+message.payloadString);
 	  //comando para poner el sensor desde esp32
+	  
+	  //comando para poner el sensor desde esp32 de la practicad e encender y apagar led 
 	  document.getElementById("sensor").innerHTML=message.payloadString;
 	  if(message.payloadString==='Encendido'){
 		 document.getElementById("imagen").src="http://www.clker.com/cliparts/M/h/R/9/8/H/red-led-on-md.png";
@@ -119,4 +128,4 @@ var btn=document.getElementById('btn');
 	  } else if(message.payloadString==='Apagado'){
 		document.getElementById("btn").innerHTML="Encender";
 	  }
-	  */
+	  
